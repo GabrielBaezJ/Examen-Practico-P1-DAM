@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../model/asistencia_model.dart';
 
 class ResultadoPantalla extends StatelessWidget {
-  ResultadoPantalla({super.key});
+  const ResultadoPantalla({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class ResultadoPantalla extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF2F4FA),
       appBar: AppBar(
-        title: Text('Resultados'),
+        title: const Text('Resultados'),
         backgroundColor: Color(0xFF3949AB),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24),
         child: Column(
           children: [
             Card(
@@ -44,34 +44,15 @@ class ResultadoPantalla extends StatelessWidget {
                 padding: EdgeInsets.all(28),
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: 170,
-                      height: 170,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          SizedBox(
-                            width: 170,
-                            height: 170,
-                            child: CircularProgressIndicator(
-                              value: datos.porcentaje / 100,
-                              strokeWidth: 12,
-                              backgroundColor: color.withValues(alpha: 0.15),
-                              valueColor: AlwaysStoppedAnimation<Color>(color),
-                            ),
-                          ),
-                          Text(
-                            '${datos.porcentaje.toStringAsFixed(2)} %',
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: color,
-                            ),
-                          ),
-                        ],
+                    Text(
+                      '${datos.porcentaje.toStringAsFixed(2)} %',
+                      style: TextStyle(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                        color: color,
                       ),
                     ),
-                    SizedBox(height: 28),
+                    SizedBox(height: 20),
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 20,
